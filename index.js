@@ -33,17 +33,10 @@ function createParticles(numOfParticles) {
 function drawParticles() {
   particles.forEach((particle, index) => {
     particle.update();
+    particle.draw();
     if (particle.radius === 0) {
       particles.splice(index, 1);
-    } else {
-      particle.draw();
     }
-    
-    particles.forEach((otherParticle, index) => {
-      if (particle.hue === otherParticle.hue) {
-        console.log('Hello');
-      }
-    });
   });
 }
 
